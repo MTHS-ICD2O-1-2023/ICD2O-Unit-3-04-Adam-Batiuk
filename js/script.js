@@ -6,11 +6,22 @@
 
 "use strict"
 
+window.oninput = function() {
+  //input
+  const fahrenheit = parseFloat(document.getElementById("fahrenheit").value)
+  //prosess
+  const celsius = (fahrenheit - 32) * 5.0 / 9.0
+  const roundedCelsius = Math.round(celsius * 100) / 100
+  //output
+  document.getElementById("page-content").innerHTML = "Formula: (" + fahrenheit + "°F − 32) × 5 / 9 = " + roundedCelsius + "°C"
+}
+
 function myButtonClicked() {
   //input
-  const fahrenheit = parseFloat(document.getElementById("side-a").value)
+  const fahrenheit = parseFloat(document.getElementById("fahrenheit").value)
   //prosess
-  
+  const celsius = (fahrenheit - 32) * 5.0 / 9.0
+  const roundedCelsius = Math.round(celsius * 100) / 100
   //output
-  document.getElementById("page-content").innerHTML = "Formula	 (324°F − 32) × 5 / 9 = 162.222°C"
+  document.getElementById("answer").innerHTML = "Answer: " + roundedCelsius + "°C"
 }
